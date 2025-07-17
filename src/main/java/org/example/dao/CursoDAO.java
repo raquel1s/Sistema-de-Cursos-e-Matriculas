@@ -66,4 +66,14 @@ public class CursoDAO {
             e.printStackTrace();
         }
     }
+
+    public static String cursosNenhumAluno(int id) {
+        String sql = "select c.nome as Curso " +
+                "from curso c " +
+                "left join matricula m " +
+                "on m.curso_id = c.id " +
+                "left join aluno a " +
+                "on a.id = m.aluno_id " +
+                "where a.id is null;";
+    }
 }

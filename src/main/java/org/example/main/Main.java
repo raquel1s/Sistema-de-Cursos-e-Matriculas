@@ -21,7 +21,7 @@ public class Main {
 
     private static void menu() {
         int opcao = 0;
-        // fazer uma função para verificar se o id do aluno e do curso existe, no gerenciamento
+
         do{
             System.out.println("\n=== SISTEMA DE CURSOS E MATRÍCULAS ===");
             System.out.println("1. Listar todos os alunos");
@@ -81,7 +81,7 @@ public class Main {
     }
 
     private static void matricularAluno() {
-        ger.listarAlunos();
+        ger.listarAlunosNaoMatriculados();
 
         System.out.println("Digite qual aluno deseja matricular: ");
         int idAluno = sc.nextInt();

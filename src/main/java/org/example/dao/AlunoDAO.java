@@ -130,4 +130,16 @@ public class AlunoDAO {
 
         return alunos;
     }
+
+    public static int numeroAlunoPorCurso(Curso curso){
+        String sql = "select c.nome as Curso, " +
+                "count(a.id) as numeroAlunos " +
+                "from curso c " +
+                "left join matricula m " +
+                "on m.curso_id = c.id " +
+                "left join aluno a " +
+                "on a.id = m.aluno_id " +
+                "where c.id = " + curso.getId() + " " +
+                "group by c.nome";
+    }
 }
