@@ -51,7 +51,19 @@ public class CursoDAO {
         return cursos;
     }
 
-    public static void deletarCurso() {
+    public static void deletarCurso(int id) {
+        String sql = "DELETE FROM curso WHERE id = ?";
 
+        try(Connection conn = Conexao.conectar();
+        PreparedStatement stmt = conn.prepareStatement(sql)){
+
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            System.out.println("\nCurso removido com sucesso!");
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

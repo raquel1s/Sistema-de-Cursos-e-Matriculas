@@ -117,6 +117,6 @@ public class Main {
         System.out.println("Digite o ID do curso que deseja excluir: ");
         int id = sc.nextInt();
 
-        CursoDAO.deletarCurso();
+        CursoDAO.deletarCurso(id);
     }
 }
